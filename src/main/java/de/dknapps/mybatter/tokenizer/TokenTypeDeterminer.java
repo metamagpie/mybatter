@@ -49,6 +49,7 @@ import static de.dknapps.mybatter.tokenizer.TokenType.SQL_COMMENT;
 import static de.dknapps.mybatter.tokenizer.TokenType.SQL_STATEMENT_SUFFIX;
 import static de.dknapps.mybatter.tokenizer.TokenType.STRING;
 import static de.dknapps.mybatter.tokenizer.TokenType.TERM;
+import static de.dknapps.mybatter.tokenizer.TokenType.VALUE_REFERENCE;
 import static de.dknapps.mybatter.tokenizer.TokenType.XML_COMMENT;
 import static de.dknapps.mybatter.tokenizer.TokenType.XML_TAG;
 
@@ -223,8 +224,9 @@ public class TokenTypeDeterminer {
 			tokenType = STRING;
 		} else if (value.startsWith(PREFIX_DOUBLE_STRING)) {
 			tokenType = STRING;
-		} else if (value.startsWith(PREFIX_MYBATIS_VALUE_REFERENCE)
-				|| value.startsWith(PREFIX_MYBATIS_VARIABLE_REFERENCE)) {
+		} else if (value.startsWith(PREFIX_MYBATIS_VALUE_REFERENCE)) {
+			tokenType = VALUE_REFERENCE;
+		}	else if (value.startsWith(PREFIX_MYBATIS_VARIABLE_REFERENCE)) {
 			tokenType = MYBATIS_REFERENCE;
 		} else if (value.startsWith(PREFIX_SQL_COMMENT)) {
 			tokenType = SQL_COMMENT;

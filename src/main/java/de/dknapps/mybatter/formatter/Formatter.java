@@ -47,6 +47,7 @@ import static de.dknapps.mybatter.tokenizer.TokenType.SQL_SUB_STATEMENT_PREFIX;
 import static de.dknapps.mybatter.tokenizer.TokenType.SQL_SUB_STATEMENT_SUFFIX;
 import static de.dknapps.mybatter.tokenizer.TokenType.STRING;
 import static de.dknapps.mybatter.tokenizer.TokenType.TERM;
+import static de.dknapps.mybatter.tokenizer.TokenType.VALUE_REFERENCE;
 import static de.dknapps.mybatter.tokenizer.TokenType.XML_COMMENT;
 import static de.dknapps.mybatter.tokenizer.TokenType.XML_TAG;
 
@@ -151,6 +152,7 @@ public class Formatter {
 
 		// Subtoken types (TERM)
 
+		addFormats(VALUE_REFERENCE, SPACE, CLOSE_BY);
 		addFormats(MYBATIS_REFERENCE, SPACE, SPACE);
 		addFormats(SQL_STATEMENT, new Format(1, 0, 0), new Format(1, 1, 0));
 		addFormats(SQL_SUB_STATEMENT, new Format(1, -1, 0), new Format(1, 1, 0));

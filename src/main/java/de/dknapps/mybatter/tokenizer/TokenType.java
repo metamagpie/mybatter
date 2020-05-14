@@ -60,6 +60,7 @@ public enum TokenType {
 
 	// Subtoken types (TERM)
 
+	VALUE_REFERENCE(TERM),
 	MYBATIS_REFERENCE(TERM),
 	SQL_STATEMENT(TERM, "select", "update", "insert", "delete"),
 	SQL_SUB_STATEMENT(TERM, "from", "group", "having", "join", "on", "order", "set", "values", "where",
