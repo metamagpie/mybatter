@@ -1,3 +1,9 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
 
 # Created by https://www.gitignore.io/api/osx,m2e,vim,git,java,maven,macos,linux,eclipse,windows,netbeans,intellij,sublimetext
 
